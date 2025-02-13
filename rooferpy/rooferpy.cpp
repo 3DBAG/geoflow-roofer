@@ -168,6 +168,21 @@ PYBIND11_MODULE(roofer, m) {
       .def_readwrite(
           "override_with_floor_elevation",
           &roofer::ReconstructionConfig::override_with_floor_elevation)
+      .def_readwrite("plane_detect_k",
+                     &roofer::ReconstructionConfig::plane_detect_k)
+      .def_readwrite("plane_detect_min_points",
+                     &roofer::ReconstructionConfig::plane_detect_min_points)
+      .def_readwrite("plane_detect_epsilon",
+                     &roofer::ReconstructionConfig::plane_detect_epsilon)
+      .def_readwrite("plane_detect_normal_angle",
+                     &roofer::ReconstructionConfig::plane_detect_normal_angle)
+      .def_readwrite("line_detect_epsilon",
+                     &roofer::ReconstructionConfig::line_detect_epsilon)
+      .def_readwrite("thres_alpha", &roofer::ReconstructionConfig::thres_alpha)
+      .def_readwrite("thres_reg_line_dist",
+                     &roofer::ReconstructionConfig::thres_reg_line_dist)
+      .def_readwrite("thres_reg_line_ext",
+                     &roofer::ReconstructionConfig::thres_reg_line_ext)
       .def("is_valid", &roofer::ReconstructionConfig::is_valid);
 
   m.def("reconstruct",
